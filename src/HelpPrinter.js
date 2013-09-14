@@ -23,40 +23,42 @@ function HelpPrinter(content, inFunc, outFunc, exitFunc){
 
 
 HelpPrinter.prototype.start = function(){
-    this.resume();
+    this.next();
 }
+HelpPrinter.prototype.next = function(){
+    var line = this._content[this._index];
+    if (line != undefined){
+        this._index++;
+        if(line.substring(0,2) === "#?"){
+            this.ask(line.substring(2),function(){
+                this.next();
+            }.bind(this));
 
-HelpPrinter.prototype.resume = function(){
-    while(true){
-        var line = this._content[this._index];
-        if (line != undefined){
-            if(line.substring(0,2) === "#?"){
-                this.ask(line.substring(2),function(){
-                    this.resume();
-                }.bind(this));
-                this._index++;
-                break;
-            }else if(line.substring(0,2) === "#>"){
-                this.jumpToTag(line.substring(2));
-            }else if(line.substring(0,6) === "#clear"){
-                this._clearScreen(function(){
-                    this.resume();
-                }.bind(this));
-                this._index++;
-                break;
-            }else if(line.substring(0,1) === "#"){
-                this._index++;
-            }else{
-                this._out(line);
-                this._index++;
-            }
+        }else if(line.substring(0,2) === "#>"){
+            this.jumpToTag(line.substring(2));
+            this.next();
 
+        }else if(line.substring(0,3) === "#.."){
+            this._out(clc.green("[ENTER]"));
+            ask(function(){
+                this.next();
+            }.bind(this));
+
+        }else if(line.substring(0,6) === "#clear"){
+            this._clearScreen(function(){
+                this.next();
+            }.bind(this));
+
+        }else if(line.substring(0,1) === "#"){
+            this.next();
         }else{
-            this._exit();
-            break;
+            this._out(line);
+            this.next();
         }
+    }else{
+        this._exit();
     }
-};
+}
 
 HelpPrinter.prototype.ask = function(line, callback){
     var options = line.split(",");
