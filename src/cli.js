@@ -9,6 +9,10 @@ var ask = rek('ask');
 var HelpPrinter = rek('HelpPrinter');
 var file = process.cwd()+"/HELPME";
 
+if (~process.argv.indexOf("-h") || ~process.argv.indexOf("--help") ){
+    file = __dirname+"/../HELPME";
+}
+
 if (!fs.existsSync(file)){
     console.log("Can't find HELPME file :_(");
 }else{
