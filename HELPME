@@ -13,15 +13,25 @@ Please choose:
 3) Thanks, that will do.
 #? 1:usage, 2:creation, 3:exit
 
+
+
+
+
 #usage
 #clear
 Using HELPME is very easy.
 Each project that has a "HELPME" file in it, already has a help sequence!
 To use, simple navigate to your project folder using your terminal,
-and type `helpme`; that's it! The help sequence you start right away!
+and type `helpme`; that's it! The help sequence will start right away!
 
 At anytime, you could type `helpme -h` to see this screen.
+
 #>please_choose
+
+
+
+
+
 
 #creation
 #clear
@@ -109,6 +119,11 @@ https://github.com/nadav-dav/helpme
 
 #..
 #>please_choose
+
+
+
+
+
 
 #exit
 Thank you! bye!
