@@ -1,0 +1,21 @@
+{
+  "name": "helpme",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node test"
+  },
+  "preferGlobal": true,
+  "bin": {
+      "helpme" : "src/cli.js"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies" : {
+      "rekuire" : "*",
+      "cli-color" : "*",
+      "lodash" : "*"
+  }
+}

@@ -1,0 +1,22 @@
+#clear
+==================================
+        !! HELPME !!
+==================================
+Welcome to HELPME assistance tool!
+
+Is it your first time using this tool?
+#? yes:firstTime, no:notFirstTime
+
+#firstTime
+#clear
+i see it is your first time here
+#>exit
+
+#notFirstTime
+#clear
+bar!!!!!
+#>exit
+
+
+#exit
+bye!
