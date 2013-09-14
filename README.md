@@ -25,7 +25,8 @@ That is what HELPME is for!
 Create a HELPME file and provide it with your project!
 it will guide your colleagues through the right way to solve their problems!
 
-Questions like "did you 'git pull'" the project or "did you build it locally?" won't bother you no more!
+Questions like "did you 'git pull'" the project or "did you build it locally?"
+won't bother you no more!
 
 --------
 did you install HELPME?
