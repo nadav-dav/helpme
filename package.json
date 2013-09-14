@@ -1,21 +1,23 @@
 {
-  "name": "helpme",
-  "version": "0.0.0",
-  "description": "ERROR: No README.md file found!",
-  "main": "index.js",
-  "scripts": {
-    "test": "jasmine-node test"
-  },
-  "preferGlobal": true,
-  "bin": {
-      "helpme" : "src/cli.js"
-  },
-  "repository": "",
-  "author": "",
-  "license": "BSD",
-  "dependencies" : {
-      "rekuire" : "*",
-      "cli-color" : "*",
-      "lodash" : "*"
-  }
+    "name" : "helpme",
+    "version" : "0.0.0",
+    "description" : "Helpme is a console driven assistance tool",
+    "scripts" : {
+        "test" : "jasmine-node test"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "http://github.com/nadav-dav/helpme.git"
+    },
+    "preferGlobal" : true,
+    "bin" : {
+        "helpme" : "src/cli.js"
+    },
+    "author" : "Nadav Dav",
+
+    "dependencies" : {
+        "rekuire" : "*",
+        "cli-color" : "*",
+        "lodash" : "*"
+    }
 }
