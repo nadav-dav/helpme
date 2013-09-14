@@ -25,8 +25,8 @@ That is what HELPME is for!
 Create a HELPME file and provide it with your project!
 it will guide your colleagues through the right way to solve their problems!
 
-Questions like "did you 'git pull'" the project or "did you build it locally?"
-won't bother you no more!
+Questions like "did you 'git pull' the project?" or "did you build it locally?"
+won't bother you any more!
 
 --------
 did you install HELPME?
@@ -41,7 +41,7 @@ Do you wish to learn how to create HELPME files to provide with your project?
 [y/n]
 >y
 
-Open your terminal and hit 'helpme -h' and follow the instructions.
+Open your terminal, hit 'helpme -h' and follow the instructions.
 Another way to learn is to checkout the HELPME file provided with this project.
 --------
 
