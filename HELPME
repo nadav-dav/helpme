@@ -4,19 +4,111 @@
 ==================================
 Welcome to HELPME assistance tool!
 
-Is it your first time using this tool?
-#? yes:firstTime, no:notFirstTime
+HELPME allows you to provide a simple troubleshoot tool for your users.
+#..
+#please_choose
+Please choose:
+1) I need help! How do I use HELPME?
+2) I want to provide help, how do I do that?
+3) Thanks, that will do.
+#? 1:usage, 2:creation, 3:exit
 
-#firstTime
+#usage
 #clear
-i see it is your first time here
-#>exit
+Using HELPME is very easy.
+Each project that has a "HELPME" file in it, already has a help sequence!
+To use, simple navigate to your project folder using your terminal,
+and type `helpme`; that's it! The help sequence you start right away!
 
-#notFirstTime
+At anytime, you could type `helpme -h` to see this screen.
+#>please_choose
+
+#creation
 #clear
-bar!!!!!
-#>exit
+In order to provide HELPME assistance to your users, you will need to create a new text file,
+and save it under the name "HELPME" inside your project folder.
 
+Every line you will type inside, will be outputed to the user, once he/she wrote `helpme` in the terminal.
+Beside displaying plain text, HELPME provides few tokens:
+#..
+#clear
+Location indicator
+====================
+A location indicator looks like this "#my_location" and describes what is the text under it is about.
+#..
+#clear
+Jump indicator
+====================
+A jump indicator looks like this: "#>my_location",
+and when HELPME reads that line, instead of printing it, it will jump to
+the location specified by the location indicator (in this example, a location named "my_location")
+
+for example:
+    hello
+    #>say_world
+    foo bar
+    #say_world
+    world
+
+will output:
+    hello
+    world
+#..
+#clear
+Question indicator
+====================
+Asks the user for input, and jumps to a location according to the answer
+
+for example:
+    What do you want to eat, an apple or an orange?
+    #? apple:apples, orange:oranges
+    #apples
+    You like apples!
+
+    #oranges
+    You like oranges!
+
+This will output:
+    What do you want to eat, an apple or an orange?
+    [apple, orange]   <-- at this point the user will type 'orange'
+    You like oranges!
+#..
+#clear
+Clear indicator
+====================
+Looks like this: "#clear" and it clears the screen!
+
+for example:
+    hello
+    #clear
+    world
+
+when done, user will see only:
+    world
+#..
+#clear
+Enter indicator
+====================
+An enter indicator requires the user to hit "Enter" before it continues.
+
+for example:
+    hello
+    #..
+    world
+
+will output:
+    hello
+    [ENTER]
+
+and only when the user will hit enter, it will write "world"
+#..
+#clear
+That's it! it is all you need to know about HELPME!
+for more examples, check out the github page at:
+https://github.com/nadav-dav/helpme
+
+#..
+#>please_choose
 
 #exit
-bye!
+Thank you! bye!
