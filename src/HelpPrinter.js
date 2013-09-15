@@ -24,7 +24,8 @@ function HelpPrinter(content, inFunc, outFunc, exitFunc){
 
 HelpPrinter.prototype.start = function(){
     this.next();
-}
+};
+
 HelpPrinter.prototype.next = function(){
     var line = this._content[this._index];
     if (line != undefined){
@@ -67,7 +68,7 @@ HelpPrinter.prototype.ask = function(line, callback){
         var key = option.split(":" )[0].trim();
         var value = option.split(":")[1].trim();
         index[key] = value;
-    })
+    });
     this._out(clc.green("[" + Object.keys(index ).toString()+ "]"))
     this._in(function(choice){
         if (index[choice]){
@@ -87,15 +88,16 @@ HelpPrinter.prototype.jumpToTag = function(tag){
 HelpPrinter.prototype._clearScreen = function clearScreen(done){
     if(process.platform === "win32"){
         process.stdout.write('\x1Bc');
+        done();
     }
     else{
         var ps = child.spawn('clear');
         ps.stdout.on('data',function(data){
             process.stdout.write(data);
             done();
-        })
+        });
         ps.stdin.end();
     }
-}
+};
 
 module.exports = HelpPrinter;
